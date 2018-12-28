@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Copy Text</title>
+  <style>
+    body { background: #f1f2f6; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0; }
+    input { width: 300px; padding: 12px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 15px; }
+    button { padding: 12px 30px; background: #00d2d3; color: white; border: none; border-radius: 50px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <input type="text" id="text" value="Copied text appears here!" readonly>
+  <button onclick="copy()">Copy Text</button>
+  <script>
+    function copy() {
+      const t = document.getElementById('text');
+      t.select();
+      navigator.clipboard.writeText(t.value);
+      alert('Copied!');
+    }
+  </script>
+</body>
+</html>
